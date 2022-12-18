@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Personal Portfolio</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://kit.fontawesome.com/12b5c28cd4.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<div id="header">
+	<div class="container">
+		<nav>
+			<img src="images/logo.png" class="logo">
+			<ul id="sidemenu">
+				<li><a href="#headear">Home</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#services">Services</a></li>
+				<li><a href="#portfolio">Portfolio</a></li>
+				<li><a href="#contact">Contact</a></li>
+				<i class="fa-sharp fa-solid fa-circle-xmark" onclick="closemenu()"></i>
+			</ul>
+			<i class="fa-solid fa-bars" onclick="openmenu()"></i>
+		</nav>
+		<div class="header-text">
+			<p>System Developer</p>
+			<h1>Hi, I'm <span>Jessamin Badua</span><br> From Poblacion South</h1>
+		</div>
+	</div>
+</div>
+<!-- ----------about---------- -->
+<div id="about">
+	<div class="container">
+		<div class="row">
+			<div class="about-col-1">
+				<img src="images/user.jpg">
+			</div>
+			<div class="about-col-2">
+				<h1 class="sub-title">About Me</h1>
+				<p>I'm Jessamin A. Badua College Student currently taking Bachelor's of Science major in System Development. </p>
+
+					<div class="tab-titles">
+							<p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+							<p class="tab-links active-link"onclick="opentab('Education')">Education</p>
+					</div>
+					<div class="tab-contents " id="skills">
+						<ul>
+							<li><span>Design</span><br>Designing, Logo Creation and Photo Editing</li>
+							<li><span>Web Development</span><br>Html,CSS & Javascript</li>
+							<li><span>Social Skills</span><br>Patience, Trustworthiness & Teamwork</li>
+						</ul>
+					</div>
+					<div class="tab-contents" id="Education">
+						<ul>
+							<li><span>2012</span><br>Kelston Montessori Incorporated</li>
+							<li><span>2017</span><br>San Sebastian School(JHS)</li>
+							<li><span>2019</span><br>San Sebastian School(SHS)</li>
+						</ul>
+					</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- --------------services------------ -->
+<div id="Services">
+	<div class="container">
+		<h1 class="sub-title">My Services</h1>
+		<div class="services-list">
+			<div>
+				<i class="fa-sharp fa-solid fa-pen-nib"></i>
+				<h2>Design</h2>
+				<p>Designing, Logo Creation and Photo Editing</p>
+				<a href="#">Learn More</a>	
+			</div>
+			<div>
+				<i class="fa-sharp fa-solid fa-computer"></i>
+				<h2>Web Development</h2>
+				<p>Html,CSS & Javascript</p>
+				<a href="#">Learn More</a>	
+			</div>
+			<div>
+				<i class="fa-sharp fa-solid fa-person"></i>
+				<h2>Social Skills</h2>
+				<p>Patience, Trustworthiness & Teamwork</p>
+				<a href="#">Learn More</a>	
+			</div>
+		</div>
+	</div>
+</div>
+<!-- ----------portfolio------------ -->
+<div id="portfolio">
+	<div class="container">
+		<h1 class="sub-title">My Work</h1>
+		<div class="work-list">
+			<div class="work">
+				<img src="images/Jamilktea.png">
+				<div class="layer">
+					<h3>Jamilktea App</h3>
+					<p>This app can place an orders.</p>
+					<a href="#"><i class="fa-sharp fa-solid fa-arrow-up-right-from-square"></i></a>
+				</div>
+			</div>
+			<div class="work-list">
+				<div class="work">
+					<img src="images/ticket-booking-sytem.png">
+					<div class="layer">
+						<h3>J1</h3>
+						<p>This is where you can book your ticket and get a promo when you avail the ticket.</p>
+						<a href="#"><i class="fa-sharp fa-solid fa-arrow-up-right-from-square"></i></a>
+					</div>
+				</div>
+				
+		</div>
+		<a href="#" class="btn">See more</a>
+	</div>
+</div>
+<!-- --------------contact---------------- -->
+<div id="contact">
+	<div class="container">
+		<div class="row">
+			<div class="contact-left">
+				<h1 class="sub-title">Contact Me</h1>
+				<p><i class="fa-solid fa-paper-plane"></i> baduajessamin@gmail.com</p>
+				<p><i class="fa-sharp fa-solid fa-square-phone"></i> 09461213721</p>
+				<div class="social-icons">
+					<a href="https://facebook.com/jessamin.badua08/"><i class="fa-brands fa-square-facebook"></i></a>
+					<a href="https://instagram.com/jssmnbd"><i class="fa-brands fa-square-instagram"></i></a>
+					<a href="https://twitter.com/callmeTETAMIN"><i class="fa-brands fa-square-twitter"></i></i></a>
+				</div>
+			</div>
+			<div class="contact-right">
+				<form>
+					<input type="text" name="Name" placeholder="Your Name" required>
+					<input type="email" name="email" placeholder="Your Email" required>
+					<textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+					<button type="submit" class="btn btn 2">Submit</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	
+	var tablinks = document.getElementsByClassName("tab-links");
+	var tabcontents = document.getElementsByClassName("tab-contents");
+
+	function opentab(tabname){
+		for(tablink of tablinks){
+			tablink.classList.remove("active-link");
+		}
+		for(tabcontent of tabcontents){
+			tabcontent.classList.remove("active-tab");
+		}
+		event.currentTarget.classList.add("active-link");
+		document.getElementById(tabname).classList.add("active-tab");
+	}
+	
+
+</script>
+
+<script>
+
+	var sidemenu = document.getElementById("sidemenu");
+	
+	function openmenu(){
+		sidemenu.style.right = "0";
+	}
+	function closemenu(){
+		sidemenu.style.right = "-200px";
+	}
+
+</script>
+
+</body>
+</html>
